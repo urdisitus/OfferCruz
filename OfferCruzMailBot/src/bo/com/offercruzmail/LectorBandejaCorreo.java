@@ -202,7 +202,10 @@ public class LectorBandejaCorreo implements Runnable {
         try {
             String emailRemitente = "";
             String asunto = mensaje.getSubject();
+            System.out.println(asunto);
             String remitente = mensaje.getFrom()[0].toString();
+            System.out.println(remitente);
+            System.out.println(mensaje.getContent());
             Matcher matcher = patronMail.matcher(remitente);
             if (matcher.find()) {
                 emailRemitente = matcher.group();
