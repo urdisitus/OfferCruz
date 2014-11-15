@@ -18,14 +18,14 @@ public class UsuarioHibernateDAO extends DAOGenericoHibernate<Usuario, Integer> 
 
     @Override
     public Integer getIdUsuarioPorCorreoElectronico(String email) {
-        Query query = getSession().createQuery("SELECT Id FROM Usuario u WHERE u.correoElectronico = :CorreoElectronico AND c.estado > 0 ");
+        Query query = getSession().createQuery("SELECT id FROM Usuario u WHERE u.correoElectronico = :CorreoElectronico AND u.estado > 0 ");
         query.setParameter("CorreoElectronico", email);
         return (Integer) query.uniqueResult();
     }
 
     @Override
     public Usuario logear(String usuario, String pass) {
-        Query query = getSession().createQuery("FROM Usuario u WHERE u.Login = :Login AND u.Password = :Password AND c.Estado > 0 ");
+        Query query = getSession().createQuery("FROM Usuario u WHERE u.login = :Login AND u.password = :Password AND u.estado > 0 ");
         query.setParameter("Login", usuario);
         query.setParameter("Password", pass);
         return (Usuario) query.uniqueResult();
@@ -33,7 +33,7 @@ public class UsuarioHibernateDAO extends DAOGenericoHibernate<Usuario, Integer> 
 
     @Override
     public Integer getIdPorLogin(String login) {
-        Query query = getSession().createQuery("SELECT id from Usuario u WHERE u.Login = :Login AND c.Estado > 0 ");
+        Query query = getSession().createQuery("SELECT id from Usuario u WHERE u.login = :Login AND u.estado > 0 ");
         query.setParameter("Login", login);
         return (Integer) query.uniqueResult();
     }

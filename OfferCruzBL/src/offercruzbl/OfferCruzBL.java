@@ -11,6 +11,7 @@ import bo.com.offercruz.bl.impl.ImagenBO;
 import bo.com.offercruz.bl.impl.control.FactoriaObjetosNegocio;
 import bo.com.offercruz.dal.imp.control.FactoriaDAOManager;
 import bo.com.offercruz.entidades.Imagen;
+import bo.com.offercruz.entidades.Usuario;
 
 /**
  *
@@ -23,10 +24,11 @@ public class OfferCruzBL {
      */
     public static void main(String[] args) {
 //        Imagen im = ImagenBO.construirImagen("C:\\Users\\Ernesto\\Desktop\\RAFAGA-NORMALIZATE\\499fc_ancelotti_casillas.jpg");
-        IImagenBO bo = FactoriaObjetosNegocio.getInstance().getIImagenBO();
+//        IImagenBO bo = FactoriaObjetosNegocio.getInstance().getIImagenBO();
 //        bo.insertar(im);
-        Imagen imm = bo.getImagenRedimencionada(1, 100);
-        System.out.println(imm.getImagenFisica());
+//        Imagen imm = bo.getImagenRedimencionada(1, 100);
+//        System.out.println(imm.getImagenFisica());
+        
     }
     
 }
