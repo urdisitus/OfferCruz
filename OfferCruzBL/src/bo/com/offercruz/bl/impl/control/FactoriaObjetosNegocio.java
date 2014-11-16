@@ -5,8 +5,10 @@
  */
 package bo.com.offercruz.bl.impl.control;
 
+import bo.com.offercruz.bl.contratos.ICategoriaBO;
 import bo.com.offercruz.bl.contratos.IImagenBO;
 import bo.com.offercruz.bl.contratos.IUsuarioBO;
+import bo.com.offercruz.bl.impl.CategoriaBO;
 import bo.com.offercruz.bl.impl.ImagenBO;
 import bo.com.offercruz.bl.impl.UsuarioBO;
 
@@ -31,6 +33,15 @@ public class FactoriaObjetosNegocio {
         return businessObjectsFactory;
     }
 
+    private ICategoriaBO categoriaBO;
+    
+    public ICategoriaBO getICategoriaBO() {
+        if (categoriaBO == null) {
+            categoriaBO = new CategoriaBO();
+        }
+        return categoriaBO;
+    }
+    
     private IUsuarioBO usuarioBO;
 
     public IUsuarioBO getIUsuarioBO() {
